@@ -9,13 +9,10 @@ function App() {
         <p>
           Welcome to the OMSCS Course Planner!
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-        </a>
+
+        <button>
+          Continue
+        </button>
       </header>
     </div>
   );
