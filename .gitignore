@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+venv_web_app_course_planner/*
+backend/.env
