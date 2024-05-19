@@ -23,15 +23,36 @@ button {
 }
 .Chat-container {
     padding: 20px;
-    width: 600px;
+    width: 800px;
     margin: 0 auto;
 }
 
 .Chat-form-container {
     display: flex;
+    width: 600px;
+    margin: 0 auto;
 }
 
 .Chat-response-container {
     padding: 10px;
     margin-top: 20px;
+    font-size: 22px;
+    color: #333;
+}
+
+.Chat-title {
+    margin-left: 100px;
+    width: 600px;
+}
+
+.Chat-intro {
+    font-weight: thin;
+    font-size: 14px;
+    color: #666;
+}
+
+.Chat-title h2 {
+    font-size: 20px;
+    font-weight: 400;
+    margin: 0;
 }
