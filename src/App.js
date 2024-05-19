@@ -1,6 +1,13 @@
-import logo from './logo.svg';
+import logo from './GT.png';
 import './App.css';
+import {useNavigate} from "react-router-dom";
+import CoursePlanner from './CoursePlanner';
 
+//import { BrowserRouter as Router, Route, Link, Routes, useNavigate } from "react-router-dom";
+const Continue = () => {
+  const navigate = useNavigate();
+  const page = navigate("./CoursePlanner")
+}
 function App() {
   return (
     <div className="App">
@@ -9,10 +16,7 @@ function App() {
         <p>
           Welcome to the OMSCS Course Planner!
         </p>
-
-        <button>
-          Continue
-        </button>
+        
       </header>
     </div>
   );
