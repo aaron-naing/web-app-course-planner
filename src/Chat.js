@@ -1,6 +1,6 @@
 import { useState } from "react"
 import OpenAI from 'openai';
-
+import './Chat.css';
 const Chat = () => {
     const openai = new OpenAI({
     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
@@ -67,38 +67,32 @@ const Chat = () => {
 
   return (
     <>
-        <div style={{
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "column",
-            width: "800px",
-            height: "50vh",
-            margin: "0 auto"
-        }}>
-
-          <div>
-            <form onSubmit={handleSubmit}>
-              <textarea
-                  cols="60"
+      <div className="Chat-container">
+      <p>
+          Explore OMSCS:
+      </p>
+        <form onSubmit={handleSubmit}>
+            <div className="Chat-form-container">
+              <textarea className="Chat-textarea"
                 type="text"
                 value={prompt}
                 placeholder="What would you like to learn?"
                 onChange={(e) => setPrompt(e.target.value)}
               ></textarea>
-              <button
+              <button className="Chat-generate"
                 disabled={loading || prompt.length === 0}
                 type="submit"
               >
                 {loading ? "Generating..." : "Generate"}
               </button>
-            </form>
-          </div>
-          {apiResponse && (
-            <div>
-               {apiResponse}
             </div>
-          )}
+        </form>
+      {apiResponse && (
+        <div className="Chat-response-container">
+           {apiResponse}
         </div>
+      )}
+      </div>
     </>
   );
 };
