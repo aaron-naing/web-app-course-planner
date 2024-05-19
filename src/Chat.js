@@ -69,8 +69,8 @@ const Chat = () => {
     <>
       <div className="Chat-container">
       <div className="Chat-title" >
-          <h2>Explore OMSCS:</h2>
           <p className="Chat-intro">We've pooled official resources (Georgia Tech's <a href="https://omscs.gatech.edu/">OMSCS</a> website) and user-generated sources, including student reviews, and trained an AI assistant to help guide you in course exploration and selection. </p>
+          <h2>Explore OMSCS:</h2>
       </div>
         <form onSubmit={handleSubmit}>
             <div className="Chat-form-container">
