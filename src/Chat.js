@@ -4,6 +4,8 @@ import OpenAI from 'openai';
 const Chat = () => {
     const openai = new OpenAI({
     apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+    organization: process.env.REACT_APP_ORGANIZATION,
+    project: "",
     dangerouslyAllowBrowser: true
   });
 
@@ -16,12 +18,15 @@ const Chat = () => {
     e.preventDefault();
     setLoading(true);
     try {
+        /*
         const assistant = await openai.beta.assistants.create({
             name: "Course Planner",
             instructions: "You are an Course Planner for the Georgia Tech Online Masters of Computer Science Program. Use you knowledge base to answer questions the course selection and advise students on courses to take depending on their interests, goals, and abilities.",
             tools: [{ type: "file_search" }],
             model: "gpt-3.5-turbo"
         });
+
+         */
       const thread = await openai.beta.threads.create();
       const message = await openai.beta.threads.messages.create(
         thread.id,
@@ -34,7 +39,7 @@ const Chat = () => {
       let run = await openai.beta.threads.runs.createAndPoll(
       thread.id,
       {
-          assistant_id: assistant.id, // process.env.ASSISTANT_ID,
+          assistant_id: process.env.REACT_APP_ASSISTANT_ID,
           instructions: "Please address the user as Jane Doe. The user has a premium account."
         }
       );
@@ -66,7 +71,7 @@ const Chat = () => {
             display: "flex",
             justifyContent: "center",
             flexDirection: "column",
-            width: "500px",
+            width: "800px",
             height: "50vh",
             margin: "0 auto"
         }}>
