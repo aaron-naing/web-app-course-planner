@@ -1,6 +1,5 @@
 import image from './image.png';
 import logo from './GT.png';
-
 import './App.css';
 import {useNavigate} from "react-router-dom";
 import CoursePlanner from './CoursePlanner';
